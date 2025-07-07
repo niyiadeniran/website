@@ -3,270 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adeniyi Ayobami Adeniran &mdash; Epidemiology & Surveillance</title>
+  <title>Dr Adeniyi Ayobami Adeniran &mdash; Public Health Leader</title>
   <link rel="icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
   <style>
-    /* Base & Typography */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      line-height: 1.6;
-      color: #333;
-    }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
+    /* Base */
+    :root{--accent:#d9232d;}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;line-height:1.6;color:#333;background:#fafafa}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
 
-    /* Accent Color */
-    :root { --accent: #d9232d; }
+    /* Sticky Nav */
+    nav{position:sticky;top:0;background:brown;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    nav ul{display:flex;justify-content:center;gap:1rem;list-style:none;padding:.7rem 1rem}
+    nav a{color:#fff;padding:.5rem 1rem;transition:color .3s}
+    nav a:hover{color:#000}
 
-    /* Sticky Navigation */
-    nav {
-      position: sticky;
-      top: 0;
-      background: brown;
-      z-index: 1000;
-    }
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      margin: 0;
-      padding: 0.5rem 1rem;
-    }
-    nav ul li a {
-      color: #fff;
-      padding: 0.5rem 1rem;
-      transition: color 0.3s ease;
-    }
-    nav ul li a:hover {
-      color: #000;
-    }
+    /* Header & Slider */
+    header{background:brown;color:#fff;text-align:center;padding:2.5rem 1rem}
+    .hero{position:relative;overflow:hidden;height:320px;margin-top:1.5rem}
+    .slides{display:flex;width:300%;animation:slide 36s infinite}
+    .slides img{width:100%;object-fit:cover}
+    @keyframes slide{0%,33.33%{margin-left:0}44.44%,77.77%{margin-left:-100%}88.88%,100%{margin-left:-200%}}
 
-    /* Header & Hero Slider */
-    header {
-      background: brown;
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    .hero-slider {
-      position: relative;
-      overflow: hidden;
-      height: 300px;
-    }
-    .slides {
-      display: flex;
-      width: 300%;
-      animation: slide 36s infinite;
-    }
-    .slides img {
-      width: 100%;
-      object-fit: cover;
-    }
-    @keyframes slide {
-      0%, 33.333%  { margin-left: 0; }
-      44.444%, 77.777% { margin-left: -100%; }
-      88.888%, 100% { margin-left: -200%; }
-    }
+    /* Sections */
+    section{padding:4rem 1rem;background:#fff}
+    h2{color:var(--accent);text-align:center;margin-bottom:2rem}
+    p{margin-bottom:1rem}
 
-    /* Sections */n
-    section { padding: 4rem 1rem; }
-    h2 { text-align: center; color: var(--accent); margin-bottom: 1.5rem; }
+    /* Profiles */
+    .profile{display:flex;flex-wrap:wrap;align-items:center;gap:2rem;max-width:1000px;margin:0 auto}
+    .profile img{width:260px;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,.15)}
+    .profile-content{flex:1;min-width:260px}
 
-    /* About */
-    #about p {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
+    .logo{max-width:180px;margin-bottom:1rem}
 
-    /* Gallery / Projects */
-    #gallery .category {
-      margin-bottom: 3rem;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-    }
-    .card img { width: 100%; }
-    .card-content { padding: 1rem; }
-    .card-content h3 { margin-top: 0; color: var(--accent); }
-    .card-content p { margin: 0.5rem 0 0; }
-
-    /* Download Flyers */
-    #download .flyers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .flyer {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      text-align: center;
-      padding: 1rem;
-      transition: box-shadow 0.3s ease;
-    }
-    .flyer:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-    .flyer button {
-      background: var(--accent);
-      border: none;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .flyer button:hover { background: #000; }
+    /* Cards Grid */
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+    .card{background:#fff;border-radius:8px;box-shadow:0 4px 6px rgba(0,0,0,.1);overflow:hidden;transition:transform .3s,box-shadow .3s}
+    .card:hover{transform:translateY(-5px);box-shadow:0 8px 12px rgba(0,0,0,.15)}
+    .card-content{padding:1rem}
+    .card-content h3{color:var(--accent);margin-top:0}
 
     /* Contact */
-    #contact .form-container {
-      max-width: 600px;
-      margin: 0 auto;
-      border: 2px dashed #ccc;
-      padding: 1.5rem;
-      border-radius: 8px;
-    }
-    #contact iframe {
-      width: 100%;
-      height: 400px;
-      border: none;
-    }
+    #contact .form-container{max-width:650px;margin:0 auto;border:2px dashed #ccc;padding:1.5rem;border-radius:8px;background:#fdfdfd}
+    #contact iframe{width:100%;height:420px;border:none}
 
     /* Footer */
-    footer {
-      background: var(--accent);
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
+    footer{background:var(--accent);color:#fff;text-align:center;padding:2rem 1rem}
 
     /* Responsive */
-    @media (max-width: 768px) {
-      nav ul { flex-direction: column; }
-      header { padding: 1.5rem 1rem; }
-      .hero-slider { height: 200px; }
-      section { padding: 2rem 1rem; }
-    }
+    @media(max-width:768px){nav ul{flex-direction:column}.hero{height:200px}section{padding:2.5rem 1rem}.profile{text-align:center}.profile img{margin:0 auto}}
   </style>
 </head>
 <body>
-
   <!-- Navigation -->
   <nav>
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#epidemiology">Epidemiology</a></li>
+      <li><a href="#bismo">Bismo Medical Centre</a></li>
+      <li><a href="#abb">Access Beyond Borders</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Header & Hero -->
+  <!-- Header -->
   <header id="home">
-    <h1>Adeniyi Ayobami Adeniran</h1>
-    <p>Expert in Epidemiology & Surveillance, Primary Healthcare & Humanitarian Response</p>
-    <div class="hero-slider">
+    <h1>Dr Adeniyi Ayobami Adeniran</h1>
+    <p>Public Health Leader • Medical Director • Social Entrepreneur</p>
+    <div class="hero">
       <div class="slides">
-        <img src="images/slide1.jpg" alt="Slide 1">
-        <img src="images/slide2.jpg" alt="Slide 2">
-        <img src="images/slide3.jpg" alt="Slide 3">
+        <img src="https://raw.githubusercontent.com/niyiadeniran/website/main/DrAdeniranPhdgown_1.png" alt="Dr Adeniran">
+        <img src="https://raw.githubusercontent.com/niyiadeniran/website/main/assets_images/projectone_pic1.png" alt="Solar Project">
+        <img src="https://raw.githubusercontent.com/niyiadeniran/website/main/assets_images/projecttwo_pic1.png" alt="M&C Centre">
       </div>
     </div>
   </header>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>A seasoned public health expert with over 15 years of experience in disease surveillance, epidemiology, health policy, primary health care leadership, and humanitarian response. I&apos;ve led teams in organizations like WHO to prepare, respond, and control diseases such as HIV/AIDS, TB, COVID-19, and cholera. I hold a PhD in Public Health, an MPH, and an MBBS, and have published over 20 peer-reviewed articles.</p>
-  </section>
-
-  <!-- Projects Gallery -->
-  <section id="gallery">
-    <h2>Projects & Gallery</h2>
-
-    <!-- Repeat category blocks for Project 1 - 7 -->
-    <div class="category">
-      <h3>Project 1: Renewable Energy</h3>
-      <div class="cards">
-        <div class="card">
-          <img src="images/project1-1.jpg" alt="Solar Plant">
-          <div class="card-content">
-            <h3>7.2 kVA Solar Plant</h3>
-            <p>24/7 stable power supply for health facilities.</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="images/project1-2.jpg" alt="Solar Installation">
-          <div class="card-content">
-            <h3>1.5 kVA Backup Unit</h3>
-            <p>Critical backup during peak demand periods.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Additional categories... -->
-    <!-- Project 2 -->
-    <div class="category">
-      <h3>Project 2: Health Infrastructure</h3>
-      <div class="cards">
-        <div class="card">
-          <img src="images/project2.jpg" alt="Maternal & Child Centre">
-          <div class="card-content">
-            <h3>New M&C Centre, Arijo</h3>
-            <p>State-of-the-art facility for maternal and child health.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ... Projects 3-7 omitted for brevity; replicate similar structure ... -->
-
-  </section>
-
-  <!-- Download Flyers -->
-  <section id="download">
-    <h2>Download Flyers</h2>
-    <div class="flyers-grid">
-      <div class="flyer">
-        <img src="images/flyer1.jpg" alt="Flyer 1">
-        <h3>Conference 2024</h3>
-        <button onclick="window.location.href='docs/flyer1.pdf'">Download</button>
-      </div>
-      <div class="flyer">
-        <img src="images/flyer2.jpg" alt="Flyer 2">
-        <h3>Workshop Series</h3>
-        <button onclick="window.location.href='docs/flyer2.pdf'">Download</button>
-      </div>
-      <div class="flyer">
-        <img src="images/flyer3.jpg" alt="Flyer 3">
-        <h3>Annual Report</h3>
-        <button onclick="window.location.href='docs/flyer3.pdf'">Download</button>
+  <!-- Epidemiology Profile -->
+  <section id="epidemiology">
+    <h2>Epidemiology &amp; Surveillance Expert</h2>
+    <div class="profile">
+      <img src="https://raw.githubusercontent.com/niyiadeniran/website/main/DrAdeniranPhdgown_1.png" alt="Dr Adeniran portrait">
+      <div class="profile-content">
+        <p>A seasoned public health expert with <strong>15+ years</strong> experience in disease surveillance &amp; control, epidemiology, health policy and management, and primary health care leadership.</p>
+        <p>Dr Adeniran has spearheaded responses to HIV/AIDS, Tuberculosis, COVID‑19, Lassa fever, Cholera, Mpox and cVDPV in collaboration with the <strong>World Health Organization</strong> and other partners. He co‑authored national guidelines, SOPs and strategic plans and has <strong>20+ peer‑reviewed publications</strong>.</p>
+        <p>Qualifications: PhD (Public Health), MPH (Health Policy &amp; Management), MBBS. Fellow of the Royal Society for Public Health; member of Faculty of Public Health (England), EUPHA &amp; ISoP.</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact Us -->
+  <!-- Bismo Medical Centre -->
+  <section id="bismo" style="background:#f7f2ef">
+    <h2>Bismo Medical Centre, Ibadan &mdash; Medical Director</h2>
+    <div class="profile">
+      <img class="logo" src="https://raw.githubusercontent.com/niyiadeniran/website/main/bismo_logo.jpg" alt="Bismo Logo">
+      <div class="profile-content">
+        <p><strong>Established 2013</strong>, Bismo is a community‑based primary healthcare facility with two permanent sites and 18 health workers. Over <strong>15,000 patients</strong> served, <strong>500+ safe deliveries</strong> with <em>zero maternal deaths</em>, and immunization for <strong>400+ children</strong>.</p>
+        <p><strong>Vision:</strong> The foremost non‑profit PHC provider in South‑West Nigeria. <strong>Mission:</strong> Bridging the health‑care gap between rich and poor through our five “E” values: Easy access, Ethical practice, Empathy, Equity, Employment.</p>
+        <p>Bismo offers subsidized/free TB &amp; HIV services, vocational training for young girls, and jobs for 100+ health workers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Access Beyond Borders -->
+  <section id="abb">
+    <h2>Access Beyond Borders &mdash; Chief Executive Officer</h2>
+    <div class="profile">
+      <img class="logo" src="https://raw.githubusercontent.com/niyiadeniran/website/main/accesbeyond_logo.jpg" alt="Access Beyond Borders Logo">
+      <div class="profile-content">
+        <p>Founded in <strong>2023</strong>, ABB supports primary healthcare facilities with infrastructure, renewable energy, water supply, commodities and logistics, bridg­ing disparities in underserved communities.</p>
+        <p>Operating across rural South‑West Nigeria, ABB has delivered renewable energy systems, built maternal centres, empowered adolescent girls, commemorated public‑health days, and spearheaded proposals for global sustainability prizes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" style="background:#f7f7f7">
+    <h2>Key Projects</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/niyiadeniran/website/main/assets_images/projectone_pic3.png" alt="Renewable Energy">
+        <div class="card-content">
+          <h3>Renewable Energy</h3>
+          <p>7.2 kVA &amp; 1.5 kVA solar plants supplying 24/7 electricity to health facilities.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/niyiadeniran/website/main/assets_images/projecttwo_pic3.jpg" alt="Health Infrastructure">
+        <div class="card-content">
+          <h3>Maternal &amp; Child Centre</h3>
+          <p>New MCC built in Arijo community, Ido LGA, Oyo State.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/niyiadeniran/website/main/assets_images/projectthree_pic1.png" alt="Girls Empowerment">
+        <div class="card-content">
+          <h3>Girls&#8217; Skills Programme</h3>
+          <p>Free skills acquisition for adolescent girls &amp; disadvantaged women.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/niyiadeniran/website/main/assets_images/results_6_project4.png" alt="Access for Impact">
+        <div class="card-content">
+          <h3>Access for Impact</h3>
+          <p>Project improving rural women&#8217;s access to skilled obstetric care.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/niyiadeniran/website/main/assets_images/projectfive_pic8.png" alt="Nutrition Support">
+        <div class="card-content">
+          <h3>Nutrition Support</h3>
+          <p>Food &amp; supplements for pregnant women and children.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/niyiadeniran/website/main/assets_images/projectsix_pic2.jpg" alt="School Health">
+        <div class="card-content">
+          <h3>School Health Outreach</h3>
+          <p>Free clinics, immunizations &amp; health checks for community schools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
   <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Have questions or want to collaborate? Fill out the form below.</p>
+    <h2>Contact &amp; Collaboration</h2>
+    <p style="text-align:center">Have a project idea or want to partner? Reach out via the form below.</p>
     <div class="form-container">
       <iframe src="https://example.com/contact-form" title="Contact Form"></iframe>
     </div>
@@ -274,15 +181,11 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Adeniyi Ayobami Adeniran. All rights reserved.</p>
-    <p>Contact: adeniran0158@pg.babcock.edu.ng | +234 803 222 2978</p>
+    <p>&copy; 2025 Dr Adeniyi Ayobami Adeniran. All rights reserved.</p>
+    <p>Email: adeniran0158@pg.babcock.edu.ng &nbsp;|&nbsp; Phone: +234&nbsp;803&nbsp;222&nbsp;2978</p>
   </footer>
 
-  <!-- Chatbot Widget Placeholder -->
+  <!-- Chatbot Placeholder -->
   <script src="chatbot.js"></script>
-  <script>
-    // Initialize chatbot widget
-  </script>
-
 </body>
 </html>
